@@ -64,7 +64,7 @@ namespace BraianBaldino_Solstice.Controllers
         [Route("GetbyState/{state}")]
         public async Task<IActionResult> GetContactByState(string state)
         {
-            var contact = await context.Contacts.Where(c => c.State == state).ToListAsync();
+            var contact = await context.Contacts.Where(c => c.State.ToLower() == state.ToLower()).ToListAsync();
 
             if (contact.Count == 0)
             {
@@ -79,7 +79,7 @@ namespace BraianBaldino_Solstice.Controllers
         [Route("GetByCity/{city}")]
         public async Task<IActionResult> GetContactByCity(string city)
         {
-            var contact = await context.Contacts.Where(c => c.City == city).ToListAsync();
+            var contact = await context.Contacts.Where(c => c.City.ToLower() == city.ToLower()).ToListAsync();
 
             if (contact.Count == 0)
             {

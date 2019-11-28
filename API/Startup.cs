@@ -51,8 +51,10 @@ namespace BraianBaldino_Solstice
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapFallbackToController("Index","Fallback");
             });
-
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
             app.UseCors(c => c.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
         }
     }

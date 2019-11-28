@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {IContact} from './../../interfaces/IContact';
 import { ContactService } from 'src/app/services/contact.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-table-component',
@@ -13,7 +14,8 @@ export class TableComponentComponent implements OnInit {
   addShow:boolean;
   tableShow:boolean;
 
-  constructor(private contactService:ContactService) { }
+  constructor(private contactService:ContactService,
+              private router:Router) { }
 
   ngOnInit() {
     this.tableShow = true;
@@ -33,6 +35,12 @@ export class TableComponentComponent implements OnInit {
 
   deleteContact(item){
     this.contactService.delete(item.id).subscribe(res=>res);
+    this.reload();
+  }
+
+  reload(){
+    this.router.navigateByUrl('/',{skipLocationChange: true}).then(()=>
+    this.router.navigateByUrl('/contactList'));
   }
 
 }

@@ -1,6 +1,7 @@
-import { Component, OnInit, Output, Input } from '@angular/core';
+import { Component, OnInit, Output, Input,EventEmitter } from '@angular/core';
 import { IContact } from 'src/app/interfaces/IContact';
 import { ContactService } from 'src/app/services/contact.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact-component',
@@ -10,7 +11,10 @@ import { ContactService } from 'src/app/services/contact.service';
 export class ContactComponentComponent implements OnInit {
 
 
-  constructor(private contactService:ContactService) { }
+  constructor(private contactService:ContactService,
+              private router:Router) { }
+
+  @Output() postCreated = new EventEmitter<boolean>();
 
   contact :IContact = {
     name:null,
@@ -28,10 +32,14 @@ export class ContactComponentComponent implements OnInit {
   ngOnInit() {
   }
 
-  postContact(){
-    
+  postContact(){ 
     console.log(this.contact);
-    
     this.contactService.post(this.contact).subscribe(res => res);
+    this.reload();
+  }
+
+  reload(){
+    this.router.navigateByUrl('/',{skipLocationChange: true}).then(()=>
+    this.router.navigateByUrl('/contactList'));
   }
 }

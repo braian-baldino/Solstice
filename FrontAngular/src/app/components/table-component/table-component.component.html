@@ -1,0 +1,42 @@
+<div *ngIf="tableShow && !addShow">
+<div class="jumbotron">
+    <button (click)="switchTableAndAdd()" type="button" class="btn btn-primary">Add</button>
+<table id="contactsTable" class="table table-striped table-bordered table-sm" cellspacing="0" width="60%">
+    <thead>
+      <tr>
+        <th></th>
+        <th class="th-sm">Full Name</th>
+        <th class="th-sm">Birth Date</th>
+        <th class="th-sm">Phone Number</th>
+        <th class="th-sm">Email</th>
+        <th class="th-sm">Address</th>
+        <th class="th-sm">State</th>
+        <th class="th-sm"></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of contacts">
+      <tr>
+        <td><img class="profileImage" src="{{item.profileImage}}" alt=""></td>
+        <td>{{item.name}}</td>
+        <td>{{item.birthDate | date}}</td>
+        <td>{{item.phoneNumber}} - {{item.phoneType}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.street}} , {{item.city}}</td>
+        <td>{{item.state}}</td>
+        <td>
+          <button type="button" class="btn btn-info">Update</button>
+          &nbsp;
+          <button type="button" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>  
+    </tbody>
+  </table>
+</div>
+</div>
+
+<!--POST-ADD-->
+<div *ngIf="addShow && !tableShow">
+    <app-contact-component ></app-contact-component>
+</div>
+
+<!--/POST-ADD-->

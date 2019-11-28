@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BraianBaldino_Solstice", "BraianBaldino_Solstice.csproj", "{1FB9DF9F-8A23-4370-99E5-F501E7AB7F45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTest", "..\NUnitTest\NUnitTest.csproj", "{63845E00-6E8A-4C37-ABAB-1644E8296B4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FB9DF9F-8A23-4370-99E5-F501E7AB7F45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FB9DF9F-8A23-4370-99E5-F501E7AB7F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FB9DF9F-8A23-4370-99E5-F501E7AB7F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FB9DF9F-8A23-4370-99E5-F501E7AB7F45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63845E00-6E8A-4C37-ABAB-1644E8296B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63845E00-6E8A-4C37-ABAB-1644E8296B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63845E00-6E8A-4C37-ABAB-1644E8296B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63845E00-6E8A-4C37-ABAB-1644E8296B4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2733F80-9091-49DA-B49F-B7F0C202FAC4}
+	EndGlobalSection
+EndGlobal

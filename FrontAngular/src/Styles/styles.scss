@@ -1,0 +1,28 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+
+body{
+    @include background($backgroundImg);
+}
+
+.logoLayout{
+    @include maxSizes(100px,100px,10px);
+}
+
+.carouselSize{
+    @include maxSizes(900px,900px,20px);
+}
+
+.carouselText{
+    @include positioning(800px,150px);
+}
+
+.jumbotron{
+    padding: 20px;
+    align-self: center;
+    margin:30px;
+}
+
+.profileImage{
+    @include profileImg(60px,60px);
+}

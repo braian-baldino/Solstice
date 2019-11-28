@@ -1,6 +1,5 @@
 
 export interface IContact {
-    id:number;
     name:string;
     birthDate:Date;
     city:string;

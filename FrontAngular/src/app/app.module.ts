@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from 'src/app-routing/app-routing.module';
+import {FormsModule} from '@angular/forms';
 
 //Components
 import { AppComponent } from './app.component';
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
    imports: [
       BrowserModule,
       AppRoutingModule,
-      HttpClientModule
+      HttpClientModule,
+      FormsModule
    ],
    providers: [
    ],

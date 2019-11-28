@@ -31,4 +31,8 @@ export class TableComponentComponent implements OnInit {
     });
   }
 
+  deleteContact(item){
+    this.contactService.delete(item.id).subscribe(res=>res);
+  }
+
 }

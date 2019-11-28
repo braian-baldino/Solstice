@@ -10,52 +10,65 @@
     <div class="card-body px-lg-5 pt-0">
 
         <!-- Form -->
-        <form class="text-center" style="color: #757575;" action="#!">
+        <form name="ngModel"  class="text-center" style="color: #757575;" action="#!">
+
+        <!-- PImage -->
+        <div class="md-form mt-3">
+            <img class="profileImage"  src="{{contact.profileImage}}" alt="">
+            <input name="imageInp" [(ngModel)]="contact.profileImage" type="text" id="materialContactFormImage" class="form-control">
+            <label for="materialContactFormImage">Image URL</label>
+        </div>
 
             <!-- Name -->
             <div class="md-form mt-3">
-                <input  type="text" id="materialContactFormName" class="form-control">
+                <input name="nameInp" [(ngModel)]="contact.name" type="text" id="materialContactFormName" class="form-control">
                 <label for="materialContactFormName">Full Name</label>
             </div>
 
             <!-- Date -->
             <div class="md-form">
-                <input type="date" id="materialContactFormDate" class="form-control">
+                <input name="dateInp" [(ngModel)]="contact.birthDate" type="date" id="materialContactFormDate" class="form-control">
             </div>
 
+            <!-- Company -->
+            <div class="md-form">
+                <input name="compInp" [(ngModel)]="contact.company" type="text" id="materialContactFormCompany" class="form-control">
+                <label for="materialContactFormName">Company</label>
+            </div>
 
              <!-- Phone Number -->
              <div class="md-form">
-                <input type="number" id="materialContactFormNumber" class="form-control">
+                <input name="phonenumberInp" [(ngModel)]="contact.phoneNumber" type="text" id="materialContactFormNumber" class="form-control">
                 <label for="materialContactFormNumber">Phone Number</label>
             </div>
 
             <!-- E-mail -->
             <div class="md-form">
-                <input type="email" id="materialContactFormEmail" class="form-control">
+                <input name="emailInp" [(ngModel)]="contact.email" type="email" id="materialContactFormEmail" class="form-control">
                 <label for="materialContactFormEmail">E-mail</label>
             </div>
 
             <!-- Street -->
             <div class="md-form">
-                <input type="text" id="materialContactFormStreet" class="form-control">
+                <input name="streetInp" [(ngModel)]="contact.street" type="text" id="materialContactFormStreet" class="form-control">
                 <label for="materialContactFormStreet">Street</label>
             </div>
 
             <!-- City -->
             <div class="md-form">
-                <input type="text" id="materialContactFormCity" class="form-control">
+                <input name="cityInp" [(ngModel)]="contact.city" type="text" id="materialContactFormCity" class="form-control">
                 <label for="materialContactFormCity">City</label>
             </div>
 
             <!-- State -->
             <div class="md-form">
-                <input type="text" id="materialContactFormState" class="form-control">
+                <input name="stateInp"  [(ngModel)]="contact.state" type="text" id="materialContactFormState" class="form-control">
                 <label for="materialContactFormState">State</label>
             </div>
 
             <!-- Send button -->
-            <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Create!</button>
+            <button (click)="postContact()" class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Create!</button>
+            <button class="btn btn-outline-danger btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Cancel</button>
 
         </form>
         <!-- Form -->

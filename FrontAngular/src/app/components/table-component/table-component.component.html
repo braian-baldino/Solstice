@@ -7,6 +7,7 @@
         <th></th>
         <th class="th-sm">Full Name</th>
         <th class="th-sm">Birth Date</th>
+        <th class="th-sm">Company</th>
         <th class="th-sm">Phone Number</th>
         <th class="th-sm">Email</th>
         <th class="th-sm">Address</th>
@@ -19,6 +20,7 @@
         <td><img class="profileImage" src="{{item.profileImage}}" alt=""></td>
         <td>{{item.name}}</td>
         <td>{{item.birthDate | date}}</td>
+        <td>{{item.company}}</td>
         <td>{{item.phoneNumber}} - {{item.phoneType}}</td>
         <td>{{item.email}}</td>
         <td>{{item.street}} , {{item.city}}</td>
@@ -26,7 +28,7 @@
         <td>
           <button type="button" class="btn btn-info">Update</button>
           &nbsp;
-          <button type="button" class="btn btn-danger">Delete</button>
+          <button (click)="deleteContact(item)" type="button" class="btn btn-danger">Delete</button>
         </td>
       </tr>  
     </tbody>

@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- Material form contact -->\n<div class=\"jumbotron\">\n<div class=\"card\">\n\n    <h5 class=\"card-header heavy-rain-gradient dark-text text-center py-4\">\n        <strong>New Contact</strong>\n    </h5>\n\n    <!--Card content-->\n    <div class=\"card-body px-lg-5 pt-0\">\n\n        <!-- Form -->\n        <form name=\"ngModel\"  class=\"text-center\" style=\"color: #757575;\" action=\"#!\">\n\n        <!-- PImage -->\n        <div class=\"md-form mt-3\">\n            <img class=\"profileImage\"  src=\"{{contact.profileImage}}\" alt=\"\">\n            <input name=\"imageInp\" [(ngModel)]=\"contact.profileImage\" type=\"text\" id=\"materialContactFormImage\" class=\"form-control\">\n            <label for=\"materialContactFormImage\">Image URL</label>\n        </div>\n\n            <!-- Name -->\n            <div class=\"md-form mt-3\">\n                <input name=\"nameInp\" [(ngModel)]=\"contact.name\" type=\"text\" id=\"materialContactFormName\" class=\"form-control\">\n                <label for=\"materialContactFormName\">Full Name</label>\n            </div>\n\n            <!-- Date -->\n            <div class=\"md-form\">\n                <input name=\"dateInp\" [(ngModel)]=\"contact.birthDate\" type=\"date\" id=\"materialContactFormDate\" class=\"form-control\">\n            </div>\n\n            <!-- Company -->\n            <div class=\"md-form\">\n                <input name=\"compInp\" [(ngModel)]=\"contact.company\" type=\"text\" id=\"materialContactFormCompany\" class=\"form-control\">\n                <label for=\"materialContactFormName\">Company</label>\n            </div>\n\n             <!-- Phone Number -->\n             <div class=\"md-form\">\n                <input name=\"phonenumberInp\" [(ngModel)]=\"contact.phoneNumber\" type=\"text\" id=\"materialContactFormNumber\" class=\"form-control\">\n                <label for=\"materialContactFormNumber\">Phone Number</label>\n            </div>\n\n            <!-- E-mail -->\n            <div class=\"md-form\">\n                <input name=\"emailInp\" [(ngModel)]=\"contact.email\" type=\"email\" id=\"materialContactFormEmail\" class=\"form-control\">\n                <label for=\"materialContactFormEmail\">E-mail</label>\n            </div>\n\n            <!-- Street -->\n            <div class=\"md-form\">\n                <input name=\"streetInp\" [(ngModel)]=\"contact.street\" type=\"text\" id=\"materialContactFormStreet\" class=\"form-control\">\n                <label for=\"materialContactFormStreet\">Street</label>\n            </div>\n\n            <!-- City -->\n            <div class=\"md-form\">\n                <input name=\"cityInp\" [(ngModel)]=\"contact.city\" type=\"text\" id=\"materialContactFormCity\" class=\"form-control\">\n                <label for=\"materialContactFormCity\">City</label>\n            </div>\n\n            <!-- State -->\n            <div class=\"md-form\">\n                <input name=\"stateInp\"  [(ngModel)]=\"contact.state\" type=\"text\" id=\"materialContactFormState\" class=\"form-control\">\n                <label for=\"materialContactFormState\">State</label>\n            </div>\n\n            <!-- Send button -->\n            <button (click)=\"postContact()\" class=\"btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect\" type=\"submit\">Create!</button>\n            <button (click)=\"reload()\" class=\"btn btn-outline-danger btn-rounded btn-block z-depth-0 my-4 waves-effect\" type=\"submit\">Cancel</button>\n\n        </form>\n        <!-- Form -->\n\n    </div>\n\n</div>\n</div>\n<!-- Material form contact -->");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Material form contact -->\n<div class=\"jumbotron\">\n<div class=\"card\">\n\n    <h5 class=\"card-header heavy-rain-gradient dark-text text-center py-4\">\n        <strong>{{title}} Contact</strong>\n    </h5>\n\n    <!--Card content-->\n    <div class=\"card-body px-lg-5 pt-0\">\n\n        <!-- Form -->\n        <form name=\"ngModel\"  class=\"text-center\" style=\"color: #757575;\" action=\"#!\">\n\n        <!-- PImage -->\n        <div class=\"md-form mt-3\">\n            <img class=\"profileImage\"  src=\"{{contact.profileImage}}\" alt=\"\">\n            <input name=\"imageInp\" [(ngModel)]=\"contact.profileImage\" type=\"text\" id=\"materialContactFormImage\" class=\"form-control\">\n            <label *ngIf=\"contact.profileImage == null\" for=\"materialContactFormImage\">Image URL</label>\n        </div>\n\n            <!-- Name -->\n            <div class=\"md-form mt-3\">\n                <input name=\"nameInp\" [(ngModel)]=\"contact.name\" type=\"text\" id=\"materialContactFormName\" class=\"form-control\">\n                <label *ngIf=\"contact.name == null\" for=\"materialContactFormName\">Full Name</label>\n            </div>\n\n            <!-- Date -->\n            <div class=\"md-form\">\n                <input placeholder=\"Date\" onfocus=\"(this.type='date')\"  name=\"dateInp\" [(ngModel)]=\"contact.birthDate\" type=\"text\" id=\"materialContactFormDate\" class=\"form-control\">\n            </div>\n\n            <!-- Company -->\n            <div class=\"md-form\">\n                <input name=\"compInp\" [(ngModel)]=\"contact.company\" type=\"text\" id=\"materialContactFormCompany\" class=\"form-control\">\n                <label *ngIf=\"contact.company == null\" for=\"materialContactFormName\">Company</label>\n            </div>\n\n             <!-- Phone Number -->\n             <div class=\"md-form\">\n                <input name=\"phonenumberInp\" [(ngModel)]=\"contact.phoneNumber\" type=\"text\" id=\"materialContactFormNumber\" class=\"form-control\">\n                <label *ngIf=\"contact.phoneNumber == null\" for=\"materialContactFormNumber\">Phone Number</label>\n            </div>\n\n            <!-- E-mail -->\n            <div class=\"md-form\">\n                <input name=\"emailInp\" [(ngModel)]=\"contact.email\" type=\"email\" id=\"materialContactFormEmail\" class=\"form-control\">\n                <label *ngIf=\"contact.email == null\" for=\"materialContactFormEmail\">E-mail</label>\n            </div>\n\n            <!-- Street -->\n            <div class=\"md-form\">\n                <input name=\"streetInp\" [(ngModel)]=\"contact.street\" type=\"text\" id=\"materialContactFormStreet\" class=\"form-control\">\n                <label *ngIf=\"contact.street == null\" for=\"materialContactFormStreet\">Street</label>\n            </div>\n\n            <!-- City -->\n            <div class=\"md-form\">\n                <input name=\"cityInp\" [(ngModel)]=\"contact.city\" type=\"text\" id=\"materialContactFormCity\" class=\"form-control\">\n                <label *ngIf=\"contact.city == null\" for=\"materialContactFormCity\">City</label>\n            </div>\n\n            <!-- State -->\n            <div class=\"md-form\">\n                <input name=\"stateInp\"  [(ngModel)]=\"contact.state\" type=\"text\" id=\"materialContactFormState\" class=\"form-control\">\n                <label *ngIf=\"contact.state == null\" for=\"materialContactFormState\">State</label>\n            </div>\n\n            <!-- Send button -->\n            <button (click)=\"submitContact()\" class=\"btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect\" type=\"submit\">{{title}}</button>\n            <button (click)=\"cancelForm()\" class=\"btn btn-outline-danger btn-rounded btn-block z-depth-0 my-4 waves-effect\" type=\"submit\">Cancel</button>\n\n        </form>\n        <!-- Form -->\n\n    </div>\n\n</div>\n</div>\n<!-- Material form contact -->");
 
 /***/ }),
 
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"tableShow && !addShow\">\n<div class=\"jumbotron\">\n    <button (click)=\"switchTableAndAdd()\" type=\"button\" class=\"btn btn-primary\">Add</button>\n<table id=\"contactsTable\" class=\"table table-striped table-bordered table-sm\" cellspacing=\"0\" width=\"60%\">\n    <thead>\n      <tr>\n        <th></th>\n        <th class=\"th-sm\">Full Name</th>\n        <th class=\"th-sm\">Birth Date</th>\n        <th class=\"th-sm\">Company</th>\n        <th class=\"th-sm\">Phone Number</th>\n        <th class=\"th-sm\">Email</th>\n        <th class=\"th-sm\">Address</th>\n        <th class=\"th-sm\">State</th>\n        <th class=\"th-sm\"></th>\n      </tr>\n    </thead>\n    <tbody *ngFor=\"let item of contacts\">\n      <tr>\n        <td><img class=\"profileImage\" src=\"{{item.profileImage}}\" alt=\"\"></td>\n        <td>{{item.name}}</td>\n        <td>{{item.birthDate | date}}</td>\n        <td>{{item.company}}</td>\n        <td>{{item.phoneNumber}} - {{item.phoneType}}</td>\n        <td>{{item.email}}</td>\n        <td>{{item.street}} , {{item.city}}</td>\n        <td>{{item.state}}</td>\n        <td>\n          <button type=\"button\" class=\"btn btn-info\">Update</button>\n          &nbsp;\n          <button (click)=\"deleteContact(item)\" type=\"button\" class=\"btn btn-danger\">Delete</button>\n        </td>\n      </tr>  \n    </tbody>\n  </table>\n</div>\n</div>\n\n<!--POST-ADD-->\n<div *ngIf=\"addShow && !tableShow\">\n    <app-contact-component ></app-contact-component>\n</div>\n\n<!--/POST-ADD-->");
+/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"tableShow && !addShow\">\n<div class=\"jumbotron\">\n    <button (click)=\"switchTableAndAdd()\" type=\"button\" class=\"btn btn-primary\">Add</button>\n<table id=\"contactsTable\" class=\"table table-striped table-bordered table-sm\" cellspacing=\"0\" width=\"60%\">\n    <thead>\n      <tr>\n        <th></th>\n        <th class=\"th-sm\">Full Name</th>\n        <th class=\"th-sm\">Birth Date</th>\n        <th class=\"th-sm\">Company</th>\n        <th class=\"th-sm\">Phone Number</th>\n        <th class=\"th-sm\">Email</th>\n        <th class=\"th-sm\">Address</th>\n        <th class=\"th-sm\">State</th>\n        <th class=\"th-sm\"></th>\n      </tr>\n    </thead>\n    <tbody *ngFor=\"let item of contacts\">\n      <tr>\n        <td><img class=\"profileImage\" src=\"{{item.profileImage}}\" alt=\"\"></td>\n        <td>{{item.name}}</td>\n        <td>{{item.birthDate | date}}</td>\n        <td>{{item.company}}</td>\n        <td>{{item.phoneNumber}} - {{item.phoneType}}</td>\n        <td>{{item.email}}</td>\n        <td>{{item.street}} , {{item.city}}</td>\n        <td>{{item.state}}</td>\n        <td>\n          <button (click)=\"updateContact(item.id)\" type=\"button\" class=\"btn btn-info\">Update</button>\n          &nbsp;\n          <button (click)=\"deleteContact(item)\" type=\"button\" class=\"btn btn-danger\">Delete</button>\n        </td>\n      </tr>  \n    </tbody>\n  </table>\n</div>\n</div>\n\n<!--POST-ADD-->\n<div *ngIf=\"addShow && !tableShow\">\n    <app-contact-component (actionCreated)=\"updateTable($event)\" (cancel)=\"backToTable($event)\" [data]=\"contact\" [title]=\"action\" ></app-contact-component>\n</div>\n\n<!--/POST-ADD-->");
 
 /***/ }),
 
@@ -559,8 +559,10 @@ let ContactComponentComponent = class ContactComponentComponent {
     constructor(contactService, router) {
         this.contactService = contactService;
         this.router = router;
-        this.postCreated = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.cancel = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.actionCreated = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.contact = {
+            id: null,
             name: null,
             birthDate: null,
             city: null,
@@ -574,14 +576,25 @@ let ContactComponentComponent = class ContactComponentComponent {
         };
     }
     ngOnInit() {
+        this.post = (this.title === 'New') ? true : false;
+        if (this.title === 'Update') {
+            this.contact = this.data;
+            console.log("to update-->", this.contact);
+        }
     }
-    postContact() {
-        console.log(this.contact);
-        this.contactService.post(this.contact).subscribe(res => res);
-        this.reload();
+    submitContact() {
+        if (this.post) {
+            console.log(this.contact);
+            delete this.contact['id'];
+            this.contactService.post(this.contact).subscribe(res => this.actionCreated.emit(true));
+        }
+        else {
+            console.log(this.contact);
+            this.contactService.put(this.contact.id, this.contact).subscribe(res => this.actionCreated.emit(true));
+        }
     }
-    reload() {
-        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => this.router.navigateByUrl('/contactList'));
+    cancelForm() {
+        this.cancel.emit(false);
     }
 };
 ContactComponentComponent.ctorParameters = () => [
@@ -589,8 +602,17 @@ ContactComponentComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
 ];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], ContactComponentComponent.prototype, "data", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], ContactComponentComponent.prototype, "title", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
-], ContactComponentComponent.prototype, "postCreated", void 0);
+], ContactComponentComponent.prototype, "cancel", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], ContactComponentComponent.prototype, "actionCreated", void 0);
 ContactComponentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-contact-component',
@@ -742,6 +764,18 @@ let TableComponentComponent = class TableComponentComponent {
     switchTableAndAdd() {
         this.tableShow = false;
         this.addShow = true;
+        this.action = 'New';
+    }
+    backToTable($event) {
+        this.tableShow = !$event;
+        this.addShow = $event;
+    }
+    updateTable($event) {
+        this.tableShow = $event;
+        this.addShow = !$event;
+        if ($event) {
+            this.getAllContacts();
+        }
     }
     getAllContacts() {
         this.contactService.getAll().subscribe(res => {
@@ -750,11 +784,15 @@ let TableComponentComponent = class TableComponentComponent {
         });
     }
     deleteContact(item) {
-        this.contactService.delete(item.id).subscribe(res => res);
-        this.reload();
+        this.contactService.delete(item.id).subscribe(res => this.getAllContacts());
     }
-    reload() {
-        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => this.router.navigateByUrl('/contactList'));
+    updateContact(item) {
+        this.contactService.get(item).subscribe(res => {
+            this.contact = res,
+                this.action = 'Update',
+                this.tableShow = false,
+                this.addShow = true;
+        });
     }
 };
 TableComponentComponent.ctorParameters = () => [

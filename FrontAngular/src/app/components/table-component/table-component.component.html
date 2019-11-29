@@ -26,7 +26,7 @@
         <td>{{item.street}} , {{item.city}}</td>
         <td>{{item.state}}</td>
         <td>
-          <button type="button" class="btn btn-info">Update</button>
+          <button (click)="updateContact(item.id)" type="button" class="btn btn-info">Update</button>
           &nbsp;
           <button (click)="deleteContact(item)" type="button" class="btn btn-danger">Delete</button>
         </td>
@@ -38,7 +38,7 @@
 
 <!--POST-ADD-->
 <div *ngIf="addShow && !tableShow">
-    <app-contact-component ></app-contact-component>
+    <app-contact-component (actionCreated)="updateTable($event)" (cancel)="backToTable($event)" [data]="contact" [title]="action" ></app-contact-component>
 </div>
 
 <!--/POST-ADD-->

@@ -4,6 +4,7 @@ using BraianBaldino_Solstice.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace NUnitTest
@@ -12,6 +13,7 @@ namespace NUnitTest
     {
         private DataContext context;
         public ContactsController controller;
+        List<Contact> contactList = new List<Contact>();
 
         [SetUp]
         public void Setup()
@@ -23,6 +25,19 @@ namespace NUnitTest
             this.context = new DataContext(options);
 
             this.controller = new ContactsController(context);
+
+            Contact contact1 = Contact.MockedValues();
+            Contact contact2 = Contact.MockedValues();
+            Contact contact3 = Contact.MockedValues();
+
+            contact2.Name = "Contact2";
+            contact3.Name = "Contact3";
+
+            //controller.InsertData(contact1);
+            //controller.InsertData(contact2);
+            //controller.InsertData(contact3);
+
+            //contactList = controller.Execute();
         }
 
         [Test]
@@ -33,11 +48,13 @@ namespace NUnitTest
         }
 
         [Test]
-        public void PostOk()
-        {
-            Task<IActionResult> okRes = controller.Post(Contact.MockedValues());
+        public void Put()
+        {       
+            Contact contact = Contact.MockedValues();
 
-            Assert.IsInstanceOf(typeof(Task<IActionResult>), okRes);
+            var actualResponse = controller.Put(9,contact);
+            
+            Assert.IsInstanceOf(typeof(Task<IActionResult>), actualResponse);
         }
 
     }

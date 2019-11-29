@@ -13,8 +13,16 @@ namespace BraianBaldino_Solstice.Controllers
     [ApiController]
     public class ContactsController : ControllerBase
     {
+        /// <summary>
+        /// Database context.
+        /// </summary>
         private readonly DataContext context;
 
+        /// <summary>
+        /// Controller constructor that initialize de database context.
+        /// Contacts table is inside the context.
+        /// </summary>
+        /// <param name="_context"></param>
         public ContactsController(DataContext _context)
         {
             this.context = _context;
@@ -146,10 +154,32 @@ namespace BraianBaldino_Solstice.Controllers
                 return NotFound("Contact couldn´t be found.");
         }
 
-        #region Private Methods
+        #region Other Methods
         private bool ContactExists(int id)
         {
             return context.Contacts.Any(c => c.Id == id);
+        }
+
+        /// <summary>
+        /// Testing Method
+        /// </summary>
+        /// <returns></returns>
+        public List<Contact> Execute()
+        {
+            return context.Contacts.ToList();
+        }
+
+        /// <summary>
+        /// Testing Method
+        /// </summary>
+        /// <param name="data"></param>
+        public void InsertData(Contact data)
+        {
+            if(data!=null)
+            {
+                context.Contacts.Add(data);
+                context.SaveChanges();
+            }         
         }
         #endregion
     }

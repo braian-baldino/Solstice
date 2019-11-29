@@ -3,7 +3,7 @@
 <div class="card">
 
     <h5 class="card-header heavy-rain-gradient dark-text text-center py-4">
-        <strong>New Contact</strong>
+        <strong>{{title}} Contact</strong>
     </h5>
 
     <!--Card content-->
@@ -16,59 +16,59 @@
         <div class="md-form mt-3">
             <img class="profileImage"  src="{{contact.profileImage}}" alt="">
             <input name="imageInp" [(ngModel)]="contact.profileImage" type="text" id="materialContactFormImage" class="form-control">
-            <label for="materialContactFormImage">Image URL</label>
+            <label *ngIf="contact.profileImage == null" for="materialContactFormImage">Image URL</label>
         </div>
 
             <!-- Name -->
             <div class="md-form mt-3">
                 <input name="nameInp" [(ngModel)]="contact.name" type="text" id="materialContactFormName" class="form-control">
-                <label for="materialContactFormName">Full Name</label>
+                <label *ngIf="contact.name == null" for="materialContactFormName">Full Name</label>
             </div>
 
             <!-- Date -->
             <div class="md-form">
-                <input name="dateInp" [(ngModel)]="contact.birthDate" type="date" id="materialContactFormDate" class="form-control">
+                <input placeholder="Date" onfocus="(this.type='date')"  name="dateInp" [(ngModel)]="contact.birthDate" type="text" id="materialContactFormDate" class="form-control">
             </div>
 
             <!-- Company -->
             <div class="md-form">
                 <input name="compInp" [(ngModel)]="contact.company" type="text" id="materialContactFormCompany" class="form-control">
-                <label for="materialContactFormName">Company</label>
+                <label *ngIf="contact.company == null" for="materialContactFormName">Company</label>
             </div>
 
              <!-- Phone Number -->
              <div class="md-form">
                 <input name="phonenumberInp" [(ngModel)]="contact.phoneNumber" type="text" id="materialContactFormNumber" class="form-control">
-                <label for="materialContactFormNumber">Phone Number</label>
+                <label *ngIf="contact.phoneNumber == null" for="materialContactFormNumber">Phone Number</label>
             </div>
 
             <!-- E-mail -->
             <div class="md-form">
                 <input name="emailInp" [(ngModel)]="contact.email" type="email" id="materialContactFormEmail" class="form-control">
-                <label for="materialContactFormEmail">E-mail</label>
+                <label *ngIf="contact.email == null" for="materialContactFormEmail">E-mail</label>
             </div>
 
             <!-- Street -->
             <div class="md-form">
                 <input name="streetInp" [(ngModel)]="contact.street" type="text" id="materialContactFormStreet" class="form-control">
-                <label for="materialContactFormStreet">Street</label>
+                <label *ngIf="contact.street == null" for="materialContactFormStreet">Street</label>
             </div>
 
             <!-- City -->
             <div class="md-form">
                 <input name="cityInp" [(ngModel)]="contact.city" type="text" id="materialContactFormCity" class="form-control">
-                <label for="materialContactFormCity">City</label>
+                <label *ngIf="contact.city == null" for="materialContactFormCity">City</label>
             </div>
 
             <!-- State -->
             <div class="md-form">
                 <input name="stateInp"  [(ngModel)]="contact.state" type="text" id="materialContactFormState" class="form-control">
-                <label for="materialContactFormState">State</label>
+                <label *ngIf="contact.state == null" for="materialContactFormState">State</label>
             </div>
 
             <!-- Send button -->
-            <button (click)="postContact()" class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Create!</button>
-            <button (click)="reload()" class="btn btn-outline-danger btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Cancel</button>
+            <button (click)="submitContact()" class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">{{title}}</button>
+            <button (click)="cancelForm()" class="btn btn-outline-danger btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Cancel</button>
 
         </form>
         <!-- Form -->

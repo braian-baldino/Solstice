@@ -41,6 +41,8 @@ namespace BraianBaldino_Solstice.Models
         public string PhoneType
         {
             get { return this.phoneType; }
+
+            //If assures that the phone type is either personal or work. Default is personal.
             set
             {
                 if (value.ToLowerInvariant() == PhoneTypes.personal || value.ToLowerInvariant() == PhoneTypes.work)

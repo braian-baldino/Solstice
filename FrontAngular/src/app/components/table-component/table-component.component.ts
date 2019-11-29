@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {IContact} from './../../interfaces/IContact';
 import { ContactService } from 'src/app/services/contact.service';
 import { Router } from '@angular/router';
@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
 })
 export class TableComponentComponent implements OnInit {
 
+  action:string;
   contacts: IContact;
+  contact: IContact;
   addShow:boolean;
   tableShow:boolean;
 
@@ -26,6 +28,20 @@ export class TableComponentComponent implements OnInit {
   switchTableAndAdd(){
     this.tableShow = false;
     this.addShow = true;
+    this.action = 'New';
+  }
+
+  backToTable($event){
+    this.tableShow = !$event;
+    this.addShow = $event;
+  }
+
+  updateTable($event){
+    this.tableShow = $event;
+    this.addShow = !$event;
+    if($event){
+      this.getAllContacts();
+    }    
   }
 
   getAllContacts(){
@@ -34,13 +50,17 @@ export class TableComponentComponent implements OnInit {
   }
 
   deleteContact(item){
-    this.contactService.delete(item.id).subscribe(res=>res);
-    this.reload();
+    this.contactService.delete(item.id).subscribe(res=> this.getAllContacts());
   }
 
-  reload(){
-    this.router.navigateByUrl('/',{skipLocationChange: true}).then(()=>
-    this.router.navigateByUrl('/contactList'));
+  updateContact(item){  
+    this.contactService.get(item).subscribe(res =>{
+      this.contact = res,
+      this.action = 'Update',
+      this.tableShow = false,
+      this.addShow = true;
+    });
   }
+
 
 }

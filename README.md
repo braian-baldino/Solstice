@@ -1,2 +1,2 @@
 # Agenda
-REST API - Front in Angular
+ASP.NET CORE REST API with Angular
